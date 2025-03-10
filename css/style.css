@@ -1,0 +1,788 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.66em;
+  color: rgba(40,31,55,0.9);
+}
+
+/* ##############################################
+  header css 
+############################################## */
+
+header {
+  padding: 1em;
+  height: 20rem;
+  background-color:  white; /*rgba(171,92,87,1);*/
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  /*background-image: url(../images/background.jpg);*/
+  background-size: cover;
+  background-position: 0 50%;
+  justify-content: center;
+}
+
+#menu-icon {
+  display: none;
+}
+
+#tit {
+  color: black; /* rgba(255,255,255,1);*/ 
+  text-align: center;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: .5em;
+  text-transform: uppercase;
+}
+
+#tit h2 {
+  color:  black;/*#ff4500; rgba(255,255,255,1);*/
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: .5em;
+  text-transform: uppercase;
+}
+#tit h4 {
+  color: black; /*#ff4500;/*rgba(255,255,255,1);*/
+  text-align: center;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: .5em;
+  text-transform: uppercase;
+}
+
+/* Suchleisten-Stil */
+.search-container {
+  display: flex;
+  margin-top: 1em;
+  justify-content: center;
+}
+
+.search-container input {
+  flex: .5;
+  padding: 1em;
+}
+
+.search-container button {
+  background-color: #ff4500;
+  color: #ffffff;
+  border: none;
+  padding: 0.5em 1em;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #d23c00;
+}
+
+/* #####################################
+  Filter-Container-Stil 
+  ##################################### */
+  
+  .filters {
+    display: flex;
+    justify-content: center; 
+    width: 773px;
+    box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
+    padding: .2em;
+    position: absolute; 
+    background-color: #ff4500;
+    z-index: 1;
+    top: 286px; 
+    right: 334px; 
+  }
+
+.filters__list {
+  margin: 0;
+  padding: 0;
+}
+
+.filters label {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  font-size: small;
+}
+
+.filters__list li {
+  display: inline;
+  user-select: none;
+  font-size: small;
+}
+  
+.filters__list li:last-child {
+  padding-bottom: 0;
+}
+  
+input[type="checkbox"] {
+  margin-right: 0.5em;
+  align-items: left;
+}
+  
+.filters:not(.filters--active) {
+  display: none;
+}
+
+.filters--active {
+  display: block; /* Hinzugefügter Stil: Einblenden, wenn aktiv */
+}
+
+/* ##############################################
+  main css 
+############################################## */
+
+main {
+  margin: 0 auto;/*vertikal horizontal*/
+  max-width: 60rem;
+  padding: 3em 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bilder {
+  display: flex;
+  justify-content: center;
+}
+
+.bilder img {
+  height: 200px;
+  width:  200px;
+  margin: 60px;
+  padding: 10px;
+}
+
+
+article {
+  flex-basis: 36rem;
+  flex-grow: 1;
+  margin: 0 2rem;
+}
+aside {
+  flex-basis: 16rem;
+  flex-grow: 1;
+  margin: 0 2rem;
+}
+section {
+  margin-bottom: 1em;
+}
+footer {
+  padding: 1em 0;
+  background-color: #808080;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon{
+  margin-left: 54px;
+}
+#head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo h2 {
+  top: 0;
+  padding: 0.1rem 4rem;
+  margin: 10px;
+  color: rgba(4, 0, 0, 0.9);
+  font-size: 20px;
+}
+#logo a {
+  text-decoration: none;
+  margin: 10px; /* Reduziere den Abstand zwischen den Menüpunkten */
+  color: rgba(4, 0, 0, 0.9);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#nav-top {
+  height: 2rem;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end; /* Ändere space-between zu flex-end */
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#nav-top li, #nav-bottom li {
+  display: inline-block; /* horizontal */
+  padding: 0em .5em;
+}
+
+#nav-main {
+  background-color: rgb(252,214,229,0.7);
+  position: fixed;
+  top: 2rem;
+  width: 100%;
+}
+#nav-main a {
+  display:block;
+  padding: .3em;
+}
+
+/* ##############################################
+  Alle Fahrschulen css 
+############################################## */
+.list {
+  display: block;
+  justify-content: left; /* Rechts ausrichten */
+  width: 773px;
+  padding: .2em;
+  margin-left: 100px;
+  position: relative;
+}
+.list h2{
+  margin-left: 45px;
+}
+
+.list ul{
+  list-style-type: none; /* keine Aufzählungszeichen */
+}
+
+.fahrschule {
+  display: inline-flex;
+  border-radius: 10px;
+  box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
+  width:100%;
+  height: 200px;
+  background-color: whitesmoke;
+}
+.fahrschule img {
+  width: 200px;
+  height: 200px;
+  margin-right: 30px;
+  padding: 0;
+  border-radius: 10px 0 0 10px;
+}
+.fahrschule h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: rgba(4, 0, 0, 0.9);
+}
+.fahrschule p {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: rgba(4, 0, 0, 0.9);
+}
+.fahrschule span {
+  margin-right: 20px;
+}
+.fahrschule .preis {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  margin: 153px 0px 0 110px;
+  font-weight: bold;
+  right: 50px;
+}
+
+
+
+/* ab einer Breite von 680px */
+@media screen and (min-width: 680px)
+{
+  #nav-top {
+    height: 3rem;
+    justify-content: flex-end;
+    padding: .2rem 4rem;
+  }
+  #nav-top li {
+    padding: .3em 1em;
+  }
+  #nav-main {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 3rem;
+  }
+  #nav-main li {
+    display: inline-block; /* horizontal */
+    padding: .2rem 2rem;/*vertikal horizontal*/
+  }
+}
+
+#nav-bottom {
+  display: inline-block;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; /* keine Aufzählungszeichen */
+}
+nav a {
+  text-decoration: none; /*unterstreichung entfernen */
+  color: rgba(40, 31, 55, 0.9);
+}
+nav a:hover {
+  text-decoration: underline;
+}
+h1 {
+  margin: 0;
+  color: rgba(26, 9, 59, 0.7);
+  font-size: 36px;
+  text-transform: uppercase;
+  }
+h2 {
+  color: rgba(26, 9, 59, 0.8);
+  font-size: 28px;
+  text-transform: none;
+  margin-top: 1em;
+  margin-bottom: -.15em;
+}
+aside h2 {
+  margin-top: 0;
+}
+h3 {
+  margin-top: 1em;
+  margin-bottom: -.8em;
+}
+
+img {
+  width: 90%;
+}
+
+/* ##############################################
+  kontakt css 
+############################################## */
+
+.kontakt{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 3em 0;
+}
+.contact-form, .contact-info {
+  width: 100%;
+  height: 100%;
+}
+.contact-form{
+  margin-right: 2em;
+}
+.contact-form h2 {
+  margin-bottom: 1em;
+  color: rgba(40, 31, 55, 0.9);
+  font-size: 26px;
+}
+.contact-form button{
+  background-color: #ff4500;
+  color: #ffffff;
+  border: none;
+  padding: 0.5em 1em;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+.contact-info{
+  margin-left: 2em;
+  top: 0;
+}
+.contact-info h2{
+  margin-bottom: 1em;
+  color: rgba(40, 31, 55, 0.9);
+  font-size: 26px;
+}
+.contact-info p{
+  margin-bottom: 1em;
+  color: rgba(40, 31, 55, 0.9);
+  font-size: 20px;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 8px;
+}
+.contact-form input {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 16px
+}
+.contact-form textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 16px
+}
+#name {
+  width: 70%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 16px;
+}
+#email {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 16px;
+}
+#message {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+
+/* ##############################################
+  template css 
+############################################## */
+
+.ergebnis{
+  display: inline-flex;
+  justify-content: center;
+  
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 3em 0;
+}
+
+.filtern{
+  display: block;
+}
+.filtern label{
+  display: block;
+  margin-right: 1em;
+  font-size: 20px;
+}
+.filtern input{
+  margin-right: 1em;
+  font-size: 20px;
+}
+.filtern button{
+  background-color: #ff4500;
+  color: #ffffff;
+  border: none;
+  padding: 0.5em 1em;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.koopi{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 3em 0;
+}
+
+.koopi h2 {
+  margin-bottom: 1em;
+  color: rgba(40, 31, 55, 0.9);
+  font-size: 30px;
+}
+
+.lo {
+  font-size: 35px;
+  font-weight: bold;
+  color: rgba(213, 6, 6, 0.9);
+  margin-bottom: 0.5em;
+}
+
+.tex p {
+  font-size: 20px;
+  color: rgba(40, 31, 55, 0.9);
+  margin: 0;
+  padding: 0;
+}
+
+.koopi a {
+  text-decoration: none;
+  color: rgba(40, 31, 55, 0.9);
+  font-size: 20px;
+}
+
+
+
+/* ##############################################
+  mobile css
+############################################## */
+@media screen and (max-width: 680px)
+{
+  #nav-top.responsive {
+		display: initial;
+		width: 100%;
+		background-color: rgba(255, 255, 255, 0.8);
+		position: fixed;
+		left: 0;
+		top: 3rem; /* unter nav-top */
+	}
+	#nav-top li {
+		display: block;
+		width: 100%;
+		border-bottom: 1px solid rgba(40,31,55,0.3);
+	}
+
+  #menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height:28px;
+    width:28px;
+    cursor: pointer; /* hand */
+    z-index: 1000; /* ganz vorne */
+    background-image: url(../images/bars-icon.png);
+    background-size:cover;
+  }
+
+  /* Füge hier weitere Stile hinzu, um das Menü in der mobilen Ansicht zu verbergen/zeigen */
+  #nav-top {
+    display: none;
+  }
+
+  header {
+    height: 20rem;
+    background-position: 0 0;
+  }
+  #tit {
+    font-size: 20px;
+  }
+  #tit h2 {
+    font-size: 20px;
+    line-height: 1.2em;
+  }
+  #tit h4 {
+    font-size: 15px;
+  }
+  .search-container {
+    flex-direction: column;
+  }
+  .search-container input {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .search-container button {
+    width: 100%;
+  }
+  .filters {
+    width: 100%;
+    top: 20.8rem;
+    right: 0;
+  }
+  .filters__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filters label {
+    margin: 0 1em 1em 0;
+  }
+  .filters__list li {
+    display: block;
+  }
+  .filters__list li:last-child {
+    padding-bottom: 1em;
+  }
+  .bilder {
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5px;
+  }
+  .bilder img {
+    width: 50%;
+    height: auto;
+    margin: 0;
+  }
+  main {
+    padding: 1em 0;
+  }
+  article, aside {
+    flex-basis: 100%;
+    margin: 0;
+  }
+  #head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #logo h2 {
+    padding: 0.2rem 1rem;
+    margin: 0;
+  }
+  #nav-top {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  #nav-top li {
+    padding: .3em 1em;
+  }
+  #nav-main {
+    display: none;
+  }
+  .list {
+    width: 100%;
+    margin-left: 0;
+  }
+  .list p, .list h3, .list span{
+    margin-left: 10px;
+  }
+
+  .fahrschule {
+    flex-direction: column;
+    height: auto;
+  }
+  .fahrschule img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+  }
+  .fahrschule .preis {
+    position: static;
+    margin: 0;
+    padding: 0.5em;
+    border-radius: 0 0 10px 10px;
+  }
+  .kontakt{
+    flex-direction: column;
+  }
+  .contact-form, .contact-info {
+    width: 100%;
+    height: 100%;
+  }
+  .contact-form{
+    margin-right: 0;
+  }
+  .contact-info{
+    margin-left: 0;
+    top: 0;
+  }
+  .contact-form label {
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 8px;
+  }
+  .contact-form input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 16px
+  }
+  .contact-form textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 16px
+  }
+  #name {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 16px;
+  }
+  #email {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 16px;
+  }
+  #message {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 16px
+  }
+  .ergebnis{
+    flex-direction: column;
+  }
+  .filtern{
+    display: block;
+  }
+  .filtern label{
+    display: block;
+    margin-right: 1em;
+    font-size: 20px;
+  }
+  .filtern input{
+    margin-right: 1em;
+    font-size: 20px;
+  }
+  .filtern button{
+    background-color: #ff4500;
+    color: #ffffff;
+    border: none;
+    padding: 0.5em 1em;
+    margin-left: 0.5em;
+    cursor: pointer;
+  }
+  .koopi{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3em 0;
+  }
+  
+  .koopi h2 {
+    margin-bottom: 0.2em;
+    color: rgba(40, 31, 55, 0.9);
+    font-size: 20px;
+    margin-left: 0.5em;
+  }
+  
+  .lo {
+    font-size: 35px;
+    font-weight: bold;
+    color: rgba(213, 6, 6, 0.9);
+    margin-bottom: 0.2em;
+    margin-left: 0.5em;
+  }
+  
+  .tex p {
+    font-size: 15px;
+    color: rgba(40, 31, 55, 0.9);
+    margin-left: 1em;
+    padding: 0;
+  }
+  
+  .koopi a {
+    text-decoration: none;
+    color: rgba(40, 31, 55, 0.9);
+    font-size: 20px;
+  }
+}
+
+a.icon {
+	position: absolute;
+	top: 1px;
+	right: 6px;
+	height:28px;
+	width:28px;
+	cursor: pointer; /* hand */
+	z-index: 1000; /* ganz vorne */
+	background-image: url(../images/bars-icon.png);
+	background-size:cover;
+}

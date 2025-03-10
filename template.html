@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+ <head>
+  <meta charset="UTF-8">
+  <title>Drive-Scout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300,400,500" rel="stylesheet">
+  <script type="text/javascript" src="js/mobile.js"></script>
+  <script type="text/javascript" src="js/javascript.js"></script>
+  <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+ </head>
+ <body>
+  <div id="head">
+    <div id="logo">
+      <h2><a href="index.html">Drive-Scout</a></h2>
+    </div>
+    <nav id="nav-top" class="mobilebars">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="all-fahrschulen.html">Alle Fahrschulen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main>
+    <section>
+      <div class="ergebnis">
+        <div class="filtern">
+          <h2>Filtern</h2>
+          <form action="all-fahrschulen.html" method="post">
+            <label for="preis">Preis:</label>
+            <input type="range" id="preis" name="preis" min="0" max="5000" value="0" step="100">
+            <label for="bewertung">Bewertung:</label>
+            <input type="range" id="bewertung" name="bewertung" min="0" max="5" value="0" step="0.1">
+            <label for="klasse">Klasse:</label>
+            <select id="klasse" name="klasse">
+              <option value="A2">A2</option>
+              <option value="A">A</option>
+              <option value="BF17">BF17</option>
+              <option value="B">B</option>
+              <option value="B197">B197</option>
+            </select>
+            <button type="submit">Filtern</button>
+          </form>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <div class="fahrschule">
+              <div>
+                <img src="images/berlina.jpg" alt="berlina">
+              </div>
+              <div>
+                <h3>Fahrschule Berlina</h3>
+                <p>Albrechtstr. 95, 12167 Berlin</p>
+                <p>Öffnungszeiten: Mo-Fr. 11-18 Uhr</p>
+                <p>Tel: 030 49958475</p>
+                <p>
+                <span data-qa="icon">
+                  <svg viewBox="0 0 16 16" width="1em" height="1em" role="presentation" focusable="false" aria-hidden="true">
+                  <path d="M12.288 14.449l-4.183-2.197a.219.219 0 00-.21 0L3.713 14.45 4.5 9.794a.254.254 0 000-.193L1.07 6.302l4.673-.682a.228.228 0 00.166-.114L8 1.271l2.091 4.235a.227.227 0 00.167.114l4.672.682-3.386 3.3a.254.254 0 00-.061.192l.805 4.655z" fill="#ff4500">
+                  </path>
+                  </svg> : 4,9
+                </span>
+                <span>Klassen: A2, A, BF17, B, B197</span>
+                </p>
+              </div>
+              <div class="preis">
+                <p>Preis: 2.600€</p>
+              </div>
+              </div>
+            </li>
+            <li>
+              <div class="fahrschule">
+              <div>
+                <img src="images/rekord.jpg" alt="berlina">
+              </div>
+              <div>
+                <h3>Fahrschule Rekord</h3>
+                <p>Schloßstr. 93, 12163 Berlin</p>
+                <p>Öffnungszeiten: Di. & Do. 13-18 Uhr</p>
+                <p>Tel: 030 7912393</p>
+                <p>
+                <span data-qa="icon">
+                  <svg viewBox="0 0 16 16" width="1em" height="1em" role="presentation" focusable="false" aria-hidden="true">
+                  <path d="M12.288 14.449l-4.183-2.197a.219.219 0 00-.21 0L3.713 14.45 4.5 9.794a.254.254 0 000-.193L1.07 6.302l4.673-.682a.228.228 0 00.166-.114L8 1.271l2.091 4.235a.227.227 0 00.167.114l4.672.682-3.386 3.3a.254.254 0 00-.061.192l.805 4.655z" fill="#ff4500">
+                  </path>
+                  </svg> : 3,9
+                </span>
+                <span>Klassen: B, BE, A, A2, A1</span>
+                </p>
+              </div>
+              <div class="preis">
+                <p>Preis: 2.800€</p>
+              </div>
+              </div>
+            </li>
+            <li>
+              <div class="fahrschule">
+              <div>
+                <img src="images/katte.jpg" alt="berlina">
+              </div>
+              <div>
+                <h3>Fahrschule Katte</h3>
+                <p>Albrechtstr. 117, 12167 Berlin</p>
+                <p>Öffnungszeiten: Mo-Di. 15-18 Uhr</p>
+                <p>Tel: 030 79199889</p>
+                <p>
+                <span data-qa="icon">
+                  <svg viewBox="0 0 16 16" width="1em" height="1em" role="presentation" focusable="false" aria-hidden="true">
+                  <path d="M12.288 14.449l-4.183-2.197a.219.219 0 00-.21 0L3.713 14.45 4.5 9.794a.254.254 0 000-.193L1.07 6.302l4.673-.682a.228.228 0 00.166-.114L8 1.271l2.091 4.235a.227.227 0 00.167.114l4.672.682-3.386 3.3a.254.254 0 00-.061.192l.805 4.655z" fill="#ff4500">
+                  </path>
+                  </svg> : 5,0
+                </span>
+                <span>Klassen: A, B</span>
+                </p>
+              </div>
+              <div class="preis">
+                <p>Preis: 2.750€</p>
+              </div>
+              </div>
+            </li>
+            <li>
+              <div class="fahrschule">
+              <div>
+                <img src="images/dynamik.jpg" alt="berlina">
+              </div>
+              <div>
+                <h3>Fahrschule Dynamik</h3>
+                <p>Hobrechtstraße 1, 12043 Berlin</p>
+                <p>Öffnungszeiten: Mo-Fr. 08-20 Uhr</p>
+                <p>Tel: 030 76964836</p>
+                <p>
+                <span data-qa="icon">
+                  <svg viewBox="0 0 16 16" width="1em" height="1em" role="presentation" focusable="false" aria-hidden="true">
+                  <path d="M12.288 14.449l-4.183-2.197a.219.219 0 00-.21 0L3.713 14.45 4.5 9.794a.254.254 0 000-.193L1.07 6.302l4.673-.682a.228.228 0 00.166-.114L8 1.271l2.091 4.235a.227.227 0 00.167.114l4.672.682-3.386 3.3a.254.254 0 00-.061.192l.805 4.655z" fill="#ff4500">
+                  </path>
+                  </svg> : 5,0
+                </span>
+                <span>Klassen: B, C, D</span>
+                </p>
+              </div>
+              <div class="preis">
+                <p>Preis: 2.461€</p>
+              </div>
+              </div>
+            </li>
+            <li>
+          </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <nav id="nav-bottom">
+      <ul class="social-icon">
+        <li><a href="https://www.instagram.com/drive_scout?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"><img src="images/icons8-instagram-48.png" alt="instagram"></a></li>
+        <li><a href="https://www.tiktok.com/@drivescout030"><img src="images/icons8-tiktok-48.png" alt="tiktok"></a></li>
+      </ul>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </nav>
+  </footer>
+ </body>
+</html>

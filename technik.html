@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="de-DE">
+ <head>
+  <meta charset="UTF-8">
+  <title>Drive-Scout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300,400,500" rel="stylesheet">
+  <script type="text/javascript" src="js/mobile.js"></script>
+  <script type="text/javascript" src="js/javascript.js"></script>
+  <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+ </head>
+ <body>
+  <div id="head">
+    <div id="logo">
+      <h2><a href="index.html">Drive-Scout</a></h2>
+    </div>
+    <nav id="nav-top" class="mobilebars">
+      <ul>
+		<li><a href="index.html">Home</a></li>
+        <li><a href="all-fahrschulen.html">Alle Fahrschulen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+	<main>
+		<article>
+			<h1>Technik</h1>
+			<p>Neben den Basics mit HTML und CSS, gibt es zahlreiche <strong>Gadgets</strong> (Spielereien), mit denen die Webseite ansprechender gestaltet werden kann. Diese Gadgets werden mit CSS3 und manchmal auch mit Javascript umgesetzt. Hier werden drei häufig verwendete Effekte vorgestellt:</p>
+			
+			<ol>
+				<li>Ein Unterstreichungs-Hover-Effekt für die Navigation</li>
+				<li>Ein Scrollup-Button, der ab einer bestimmten Scrollhöhe angezeigt wird und per Klick zum Anfang der Seite scrollt</li>
+				<li>Ein Suchfeld, dass sich vergrößert, wenn hineingeklickt wird</li>
+			</ol>
+			
+			<h2>Navigation-Hover</h2>
+			<p><p>Ein Hover-Effekt ist eine Formatierung, die angewandt wird, wenn die Maus sich über dem Element befindet. Der gehoverte Zustand wird im Stylesheet durch den Selektor <b>:hover</b> angesporchen.</p>
+			<p>Der Navigation-Hover-Stroke ist ein Effekt, bei dem der Link beim Hovern von der Mitte her nach außen unterstrichen wird.</p>
+			<p>Zunächst wird die Position der Links im Navigationsbereich auf <strong>relative</strong> gesetzt, damit sie für enthaltene Elemente als Elternelement fungieren können. Anschließend wird in den Links vor dem Text mit <strong>:before</strong> und <strong>:content</strong> neuer Inhalt erzeugt. Der Inhaltebereich ist leer, 100% breit und 1 Pixel hoch. Da der Link als Elternelement fungiert, hat der Inhaltsbereich die Breite des Links. Mit der Positionierungsart <b>absolut</b> und der Position <b>bottom: 0</b></p>
+			<p>wird der neue Bereich am unteren Rand des Elternelementes ausgerichtet. Unter den Links erscheint eine Linie mit der angegebenen Hintergrundfarbe.</p>
+			<p>Die Linie wird mit der Anweisung <b>scaleX(0)</b> zunächst auf 0% Breite gesetzt. Beim Hovern wird sie durch <b>scaleX(1)</b> auf 100% ausgedehnt. Damit sich die Linie allmählich ausdehnt, wird eine Übergangszeit von 0.3 Sekunden angegeben.</p>
+			
+			<div><strong>HTML</strong>
+			<p class="codesample">&lt;nav class="<strong>stroke</strong>"&gt;<br />&lt;ul&gt;<br />&lt;li&gt;&lt;a href="#"&gt;Konzeption&lt;/a&gt;&lt;/li&gt;<br />...<br />&lt;/ul&gt;<br />&lt;/nav&gt;</p></div>
+			
+			<div><strong>CSS</strong><br />
+			<p class="codesample">nav.stroke ul li a,<br />nav.fill ul li a {<br />  position: relative;<br />}<br />nav.stroke a:before {<br />  content: "";<br />  position: absolute;<br />  width: 100%;<br />  height: 1px;<br />  bottom: 0;<br />  background-color: rgba(40, 31, 55, 0.5);<br />  visibility: hidden;<br />  -webkit-transform: scaleX(0);<br />  transform: scaleX(0);<br />  -webkit-transition: all 0.3s ease-in-out 0s;<br />  transition: all 0.3s ease-in-out 0s;<br />}<br />nav.stroke a:hover:before {<br />  visibility: visible;<br />  -webkit-transform: scaleX(1);<br />  transform: scaleX(1);<br />}</div>
+
+			
+			
+			<h2>Scrollup Button</h2>
+			<p>Ein Scrollup Botton ist eine Schaltfäche, die am Seitenrand erscheint, sobald die Webseite nach unten gescrollt wurde. Ein Klick auf den Button scrollt die Seite an den Anfang.</p>
+
+			<p>Ähnlich wie beim Navigation-Hover-Stroke wird in das mit der Klasse scrollUp gekennzeichnete Element mit :before ein Button-Element eingefügt. Der Button ist zunächst ausgeblendet (<strong>display: none</strong>) und wird eingeblendet (<strong>display: block</strong>), sobald eine Scrollhöhe von 300 Pixeln erreicht wurde. Durch die Positionierungsart fixed bleibt der Button auch beim Scrollen in derselben vertikalen Position.</p>
+
+			<p>Das Einfügen des Buttons und das Scrollen bei Button-Klick werden durch das Javascript gadgets.js implementiert, das im head der Seite eingebunden werden muss.</p>
+			
+			<div><strong>HTML</strong>
+			<p class="codesample">
+			&lt;head&gt;<br>&lt;meta charset="UTF-8"&gt;<br>&lt;title&gt;HTML/CSS Workshop - &lt;/title&gt;<br>...<br>&lt;script type="text/javascript" src="<strong>js/gadgets.js</strong>"&gt;&lt;/script&gt; <br>&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;<br>&lt;/head&gt;<br>...<br>&lt;footer class="<strong>scrollUp</strong>"&gt;<br>Impressum | Datenschutz<br>&lt;/footer&gt;</p></div>
+			
+
+			<div><strong>CSS</strong>
+			<p class="codesample">
+			#scrollUpBtn {<br>
+			  display: none;<br>
+			  position: fixed;<br>
+			  height: 50px;<br>
+			  width: 50px;<br>
+			  bottom: 130px;<br>
+			  right: 0px;<br>
+			  border: 1px solid rgb(252,214,229);<br>
+			  cursor: pointer; <br>
+			  padding: 15px;<br>
+			  background-color: rgba(252,214,229,0.5);<br>
+			  font-size: 24px; <br>
+			}
+			</p></div>
+
+
+
+			<h2>Expandable Searchbox</h2>
+			<p>Die Expandable-Searchbox ist ein Suchefeld, dass sich Vergrößert, wenn der Benutzer hineinklickt.</p>
+			
+			<div><strong>HTML</strong>
+			<p class="codesample">
+			&lt;nav id="nav-top"&gt;<br>&lt;ul&gt;<br>&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>&lt;li&gt;&lt;a href="kontakt.html"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;<br>&lt;li&gt;<br>&lt;form&gt;<br>&lt;input type="search" placeholder="Suche"&gt;<br>&lt;/form&gt;<br>&lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;/nav&gt;			
+			</p></div>
+
+			<div><strong>CSS</strong>
+			<p class="codesample">input {<br>&nbsp;outline: none;<br>}<br>input[type=search] {<br>&nbsp;-webkit-appearance: textfield;<br>&nbsp;-webkit-box-sizing: content-box;<br>&nbsp;font-family: inherit;<br>&nbsp;font-size: 100%;<br>}<br>input::-webkit-search-decoration,<br>input::-webkit-search-cancel-button {<br>&nbsp;display: none; <br>}<br>input[type=search] {<br>&nbsp;background-image: url(../images/search-icon.png); /*Lupe*/<br>&nbsp;background-repeat: no-repeat;<br>&nbsp;background-size: 18px;<br>&nbsp;background-position: 9px center;<br>&nbsp;border: solid 1px rgba(255, 255, 255, 0);<br>&nbsp;padding-left: 32px;<br>&nbsp;width: 100px;<br>&nbsp;font-size: 1rem;<br>&nbsp;font-family: "Roboto", sans-serif;<br>&nbsp;background-color: rgba(255, 255, 255, 0);<br>&nbsp;-webkit-transition: all .5s;<br>&nbsp;-moz-transition: all .5s;<br>&nbsp;transition: all .5s;<br>}<br>input[type=search]:focus {<br>&nbsp;width: 300px;<br>&nbsp;padding: 6px 10px 6px 32px;<br>&nbsp;border-color: #ddd;<br>}<br>input:-moz-placeholder {<br>&nbsp; color: rgba(40, 31, 55, 0.9);<br>}<br>input::-webkit-input-placeholder {<br>&nbsp; color: rgba(40, 31, 55, 0.9);<br>}		
+			</p></div>
+			
+		</article>
+
+		<aside>			
+			<section>
+			<h2>Hinweis</h2>
+			<p>Für den Scrollup-Button wird das Javascript <a href="js/gadgets.js">gadgets.js</a> benötigt.</p>
+			<p>Alle Effekte sind in diese Webseite eingebaut, so dass sie auch gleich ausprobiert werden können.</p>
+			</section>			
+		</aside>
+
+	</main>
+	<footer>
+		<nav id="nav-bottom">
+		  <ul class="social-icon">
+			<li><a href="https://www.instagram.com/drive_scout?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"><img src="images/icons8-instagram-48.png" alt="instagram"></a></li>
+			<li><a href="https://www.tiktok.com/@drivescout030"><img src="images/icons8-tiktok-48.png" alt="tiktok"></a></li>
+		  </ul>
+		  <ul>
+			<li><a href="impressum.html">Impressum</a></li>
+			<li><a href="datenschutz.html">Datenschutz</a></li>
+		  </ul>
+		</nav>
+	</footer>
+</body>
+</html>

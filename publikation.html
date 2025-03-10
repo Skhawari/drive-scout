@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="de-DE">
+ <head>
+  <meta charset="UTF-8">
+  <title>Drive-Scout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300,400,500" rel="stylesheet">
+  <script type="text/javascript" src="js/mobile.js"></script>
+  <script type="text/javascript" src="js/javascript.js"></script>
+  <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+ </head>
+ <body>
+  <div id="head">
+    <div id="logo">
+      <h2><a href="index.html">Drive-Scout</a></h2>
+    </div>
+    <nav id="nav-top" class="mobilebars">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="all-fahrschulen.html">Alle Fahrschulen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+	<main>
+		<article>
+			<h1>Publikation</h1>
+
+			<h2>Testen der Seite</h2>
+			<p>
+			Bevor die Seite auf den Webserver geladen wird, sollte sie ausgiebig in verschiedenen Browsern auf unterschiedlichen Endgeräten getestet werden<br>
+
+			Die höchste Wahrscheinlichkeit für eine korrekte Darstellung in allen Browsern hat fehlerfreier Code.
+			Ob eine Webseite syntaktisch korrekt ist, kann mit einem HTML-Validator <a href="https://validator.w3.org" target="_blank">validator.w3.org</a> bzw. mit einem CSS-Validator <a href="http://jigsaw.w3.org/css-validator" target="_blank">jigsaw.w3.org/css-validator</a> getestet werden.
+			</p>
+			<p>
+
+
+			<h2>Webspace</h2>
+			<p>
+			Die fertige Website muss vom lokalen Rechner auf einen Webserver geladen werden, um im Internet verfügbar zu sein.<br>
+
+			Die ZEDAT bietet Universitätsangehörigen die Möglichkeit eine eigene Homepage auf den ZEDAT-Webserver Komma zu laden <a href="http://www.zedat.fu-berlin.de/Userpage" target="_blank">www.zedat.fu-berlin.de/Userpage</a>.<br>
+
+			Aber auch private Anbieter wie <a href="http://www.hosteurope.de" target="_blank">Hosteurope</a>, <a href="https://www.df.eu/"  target="_blank">Domain Factory</a>, <a href="http://www.strato.de"  target="_blank">Strato</a> und <a href="http://www.1und1.de" target="_blank">1und1</a> stellen Webspace zur Verfügung, den Nutzer für ihre Webseiten mieten können. Die großen Anbieter sind preiswert, bieten jedoch meist wenig Kundenservice.<br>
+			Es gibt auch kostenlose Anbieter, wie <a href="https://www.hostinger.de/kostenlose-webspace" target="_blank">Hostinger</a>, <a href="https://www.bplaced.net/" target="_blank">Bplaced</a> oder das Baukastensystem <a href="https://de.jimdo.com/" target="_blank">Jimdo</a>. Kostenlose Angebote finanzieren sich über Werbung und dienen oft der Neukundengewinnung. Für professionelle Projekte sind sie aufgrund ihrer schlechteren Performance nicht ratsam.
+			<br>
+			Bei kommerziellen Anbietern wird der Webspace mit einem gewählten Domainnamen verbunden. Ob die Domain noch verfügbar ist, kann beispielsweise bei <a href="https://www.checkdomain.de/domain-check/" target="_blank">Check Domain</a> geprüft werden.
+			</p>
+
+
+			<h2>Upload</h2>
+			Der Upload der fertigen Site auf den Remote-Webserver erfolgt über SFTP. SFTP steht für Secure File Transfer Protocol und bezeichnet ein Übertragungsprotokoll, mit dem Rechner Dateien austauschen können. Zum Übertragen der Dateien kann beispielsweise der FTP-Client FileZilla verwendet werden. FileZilla ist ein Open Source FTP Programm, das man unter folgender Adresse herunterladen kann: <a href="http://www.filezilla.de/download.htm" target="_blank">http://www.filezilla.de</a>.
+			</p>
+
+
+			<table>
+				<caption>FileZilla Konfiguration</caption>
+				<tbody>
+					<tr>
+						<td>Server</td><td>login.zedat.fu-berlin.de</td>
+					</tr>
+					<tr>
+						<td>Benutzername</td><td>zedatbenutzername (klein geschrieben !)</td>
+					</tr>
+					<tr>
+						<td>Password</td><td>zedatpasswort</td>
+					</tr>
+					<tr>
+						<td>Port</td><td>22 (SFTP Port)
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div>
+				<img src="images/filezilla.png" alt="Screenshot des FTP Clients FileZilla">
+			</div>
+
+			<p>
+			Die Abbildung zeigt auf der linken Seite die lokalen Verzeichnisse und auf der rechten Seite die Verzeichnisse auf dem Webserver. Dateien bzw. Verzeichnisse werden auf dem Webserver übertragen, indem sie doppelt angeklickt oder mit gedrückter Maustaste von der linken in die rechte Fensterhälfte gezogen werden.<br>
+			</p>
+
+
+			<h2>Testen der Site im Internet</h2>
+			<p>
+			Um die übertragene Website online zu testen, muss die folgende Adresse in den Browser eingegeben werden:
+
+			<p>
+			<strong>Syntax</strong><br>
+			<tt>http://userpage.fu-berlin.de/zedatbenutzername/unterverzeichnis_von_public_html/dateiname_mit_endung</tt>
+			</p>
+			<p>
+			<strong>Beispiel</strong><br>
+			<tt>http://userpage.fu-berlin.de/max/web1/publikation.html</tt>
+			</p>
+			<p>
+			Hinweis: Dateien, die über das Internet zugänglich sein sollen, müssen auf dem Webserver im Verzeichnis public_html liegen. Wird kein Dateiname angegeben sucht der Webserver automatisch nach einer Datei namens index.html. Die Startseite sollte daher index.html heißen und im oder in einem Unterverzeichnis von public_html liegen.
+			</p>
+
+
+			<h2>Spätere Änderungen an der Website</h2>
+			<p>
+			Spätere Änderungen werden zunächst an der lokalen Kopie der Site vorgenommen. Anschließend müssen die geänderten Dateien mithilfe von FileZilla auf dem Server aktualisiert werden.
+			</p>
+
+
+		</article>
+
+		<aside>
+			<section>
+			<h2>Browser 2018</h2>
+			<p>Die 2018 meistverwendeten Browser waren:</p>
+			<ul>
+				<li>Chrome 68 | 69</li>
+				<li>IE 11.0</li>
+				<li>Firefox 62</li>
+				<li>Edge 17</li>
+				<li>Safari 11</li>
+			</ul>
+			</section>
+
+		</aside>
+
+	</main>
+	<footer>
+		<nav id="nav-bottom">
+		  <ul class="social-icon">
+			<li><a href="https://www.instagram.com/drive_scout?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"><img src="images/icons8-instagram-48.png" alt="instagram"></a></li>
+			<li><a href="https://www.tiktok.com/@drivescout030"><img src="images/icons8-tiktok-48.png" alt="tiktok"></a></li>
+		  </ul>
+		  <ul>
+			<li><a href="impressum.html">Impressum</a></li>
+			<li><a href="datenschutz.html">Datenschutz</a></li>
+		  </ul>
+		</nav>
+	</footer>
+</body>
+</html>
